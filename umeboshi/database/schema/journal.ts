@@ -13,9 +13,9 @@ import {
   uuid,
 } from "drizzle-orm/pg-core";
 
-import { TABLE_PREFIX } from "@/configuration/database";
-import { JournalType } from "@/type/journal";
+import { TABLE_PREFIX } from "../configuration";
 
+import { JournalType } from "@/type/journal";
 import accountTable from "./account";
 import chartOfAccountTable from "./chart-of-account";
 import currencyTable from "./currency";

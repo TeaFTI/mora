@@ -10,7 +10,7 @@ import {
   uuid,
 } from "drizzle-orm/pg-core";
 
-import { TABLE_PREFIX } from "@/configuration/database";
+import { TABLE_PREFIX } from "../configuration";
 
 import addressTable from "./address";
 

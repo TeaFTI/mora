@@ -25,7 +25,7 @@
     "database:migrate": "dotenvx run -- drizzle-kit migrate",
     "database:plant": "dotenvx run -- npx tsx ./database/plant.ts",
     "database:unplant": "dotenvx run -- npx tsx ./database/unplant.ts",
-    "database:all": "dotenvx run -- sh -c 'drizzle-kit generate && drizzle-kit migrate && npx tsx ./database/plant.ts'"
+    "database:all": "dotenvx run -- drizzle-kit generate && drizzle-kit migrate && npx tsx ./database/plant.ts"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.51",

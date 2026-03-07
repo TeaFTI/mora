@@ -8,7 +8,7 @@ import {
   uuid
 } from "drizzle-orm/pg-core";
 
-import { TABLE_PREFIX } from "@/configuration/database";
+import { TABLE_PREFIX } from "../configuration";
 
 const tenantTable = pgTable(`${TABLE_PREFIX}tenant`, {
   id: uuid("id").primaryKey().default(sql`uuidv7()`),

@@ -6,7 +6,7 @@ import "@dotenvx/dotenvx/config";
 
 import { defineConfig } from "drizzle-kit";
 
-import PostgreSQLConfiguration from "@/configuration/database";
+import PostgreSQLConfiguration from "./database/configuration";
 
 const DATABASE_URI = PostgreSQLConfiguration.DATABASE_URI;
 

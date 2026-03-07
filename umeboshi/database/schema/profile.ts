@@ -5,7 +5,7 @@
 import { sql } from "drizzle-orm";
 import { pgTable, text, uuid } from "drizzle-orm/pg-core";
 
-import { TABLE_PREFIX } from "@/configuration/database";
+import { TABLE_PREFIX } from "../configuration";
 
 const profileTable = pgTable(`${TABLE_PREFIX}profile`, {
   id: uuid("id").primaryKey().default(sql`uuidv7()`),

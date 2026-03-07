@@ -5,7 +5,7 @@
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Client, Pool } from "pg";
 
-import PostgreSQLConfiguration from "@/configuration/database";
+import PostgreSQLConfiguration from "./configuration";
 import * as schema from "./schema";
 import {
   accountRelationList,
