@@ -1,5 +1,5 @@
 import { Link, useRouteContext } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
+// import { useServerFn } from "@tanstack/react-start";
 import { ChevronsUpDownIcon, LogOutIcon, User } from "lucide-react";
 
 import {
@@ -22,17 +22,17 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "~/_shadcn/component/interface/sidebar";
-import { logoutFn } from "~/server/authentication/logout";
+// import { logoutFn } from "~/server/authentication/logout";
 
 export function SidebarUser() {
   const { isMobile } = useSidebar();
   const { currentSession } = useRouteContext({ from: "/_authed" });
 
-  const logout = useServerFn(logoutFn);
+  // const logout = useServerFn(logoutFn);
 
-  const handleLogout = async () => {
-    await logout();
-  }
+  // const handleLogout = async () => {
+  //   await logout();
+  // }
 
   const displayName = currentSession?.user.displayUsername
     ?? "Unknown User";
@@ -101,7 +101,7 @@ export function SidebarUser() {
             <DropdownMenuGroup>
               <DropdownMenuItem
                 className="cursor-pointer"
-                onClick={handleLogout}
+                render={<Link to="/logout" preload={false} />}
               >
                 <LogOutIcon />
                 Logout
