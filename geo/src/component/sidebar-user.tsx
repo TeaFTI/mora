@@ -1,6 +1,6 @@
-import { useRouteContext } from "@tanstack/react-router";
+import { Link, useRouteContext } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { ChevronsUpDownIcon, LogOutIcon } from "lucide-react";
+import { ChevronsUpDownIcon, LogOutIcon, User } from "lucide-react";
 
 import {
   Avatar,
@@ -86,9 +86,23 @@ export function SidebarUser() {
               </DropdownMenuLabel>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
+            {/* Profile */}
+            <DropdownMenuGroup>
+              <DropdownMenuItem
+                className="cursor-pointer"
+                render={<Link to="/profile" />}
+              >
+                <User />
+                Profile
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
             {/* User Menu */}
             <DropdownMenuGroup>
-              <DropdownMenuItem onClick={handleLogout}>
+              <DropdownMenuItem
+                className="cursor-pointer"
+                onClick={handleLogout}
+              >
                 <LogOutIcon />
                 Logout
               </DropdownMenuItem>
