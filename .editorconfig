@@ -18,6 +18,9 @@ indent_style = space
 # Remove Whitespace Preceding Newline Character
 trim_trailing_whitespace = true
 
+[*.{md}]
+indent_size = 2
+
 [*.{htm,html}]
 indent_size = 2
 
