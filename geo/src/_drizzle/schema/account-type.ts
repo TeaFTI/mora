@@ -15,4 +15,7 @@ const accountTypeTable = pgTable(`${TABLE_PREFIX}account_type`, {
   description: text("description"),
 });
 
+export type AccountType = typeof accountTypeTable.$inferSelect;
+export type AccountTypeCreate = typeof accountTypeTable.$inferInsert;
+export type AccountTypeUpdate = Partial<AccountType>;
 export { accountTypeTable };

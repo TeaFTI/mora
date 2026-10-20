@@ -2,7 +2,7 @@
  * Account Table Schema
  */
 
-import { defineRelations, sql } from "drizzle-orm";
+import { sql } from "drizzle-orm";
 import { pgTable, text, uuid } from "drizzle-orm/pg-core";
 
 import { TABLE_PREFIX } from "../../configuration/global";
@@ -18,19 +18,8 @@ const accountTable = pgTable(`${TABLE_PREFIX}account`, {
   description: text("description"),
 });
 
-const accountRelationList = defineRelations(
-  { accountTable, accountTypeTable },
-  (relation) => ({
-    accountTable: {
-      accountType: relation.one.accountTypeTable({
-        from: relation.accountTable.accountTypeId,
-        to: relation.accountTypeTable.id,
-      })
-    },
-    accountTypeTable: {
-      accountList: relation.many.accountTable()
-    },
-  })
-);
+export type Account = typeof accountTable.$inferSelect;
+export type AccountCreate = typeof accountTable.$inferInsert;
+export type AccountUpdate = Partial<Account>;
+export { accountTable };
 
-export { accountRelationList, accountTable };
