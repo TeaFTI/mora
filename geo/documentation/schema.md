@@ -5,6 +5,7 @@
 - [User](#user)
 - [Profile](#profile)
 - [Email](#email)
+- [Account](#account)
 - [Reference](#reference)
 
 ## Overview
@@ -19,8 +20,12 @@ Each `user` can optionally have a `profile`, though it is not required. But a `
 
 The `profile` entity stores a collection of settings and information associated with a `user`.
 
-
-
 ## Email
+
+## Account
+
+The `account` entity stores information about financial accounts.
+
+
 
 ## Reference
