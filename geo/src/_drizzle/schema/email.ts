@@ -14,5 +14,5 @@ const emailTable = pgTable(`${TABLE_PREFIX}email`, {
 
 export type Email = typeof emailTable.$inferSelect;
 export type EmailCreate = typeof emailTable.$inferInsert;
-export type EmailUpdate = Partial<EmailCreate>;
+export type EmailUpdate = Partial<Email>;
 export { emailTable };
